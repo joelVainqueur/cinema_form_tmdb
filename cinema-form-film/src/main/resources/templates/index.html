@@ -3,15 +3,29 @@
 <html>
 <head>
     <title>recherche film</title>
-    <div th:replace="fragments/layout :: header-css"></div>
+    <div th:replace="fragment/layout :: header-css"></div>
 </head>
 
 <body>
-<h1>Recherche d'un Film</h1>
 
-<button id="reset">Reset »</button>
+<!--<div class="container-fluid">-->
+    <!--<div class="row">-->
+        <!--<div style="color: red" class="col-md-12"></div>-->
+        <!--<img src="banniere.jpg" width="100%" height="120px" />-->
+    <!--</div>-->
+<!--</div>-->
+
+<!--<h1>Recherche d'un Film</h1>-->
+<!--<h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>-->
+
+<!--<boutton>-->
+    <!--<form th:action="@{/logout}" method="post">-->
+        <!--<input type="submit" value="Sign Out"/>-->
+    <!--</form>-->
+<!--</boutton>-->
+<!--<button id="reset">Reset »</button>-->
 </h2>
-<div th:include="fragments/layout :: header-page"></div>
+<div th:include="fragment/layout :: header-page"></div>
 <!--<h3>Important Link - <a href="http://www.yogihosting.com/jquery-ajax/">jQuery AJAX</a></h3>-->
 <div class="container">
     <div id="apiDiv">
@@ -67,6 +81,6 @@
         </div>
     </div>
 </div>
-<div th:include="fragments/layout :: footer-js"></div>
+<div th:include="fragment/layout :: footer-js"></div>
 </body>
 </html>

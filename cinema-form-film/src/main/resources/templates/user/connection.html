@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<!--declaration d'un espace de nommage th dans lequ'elle est stocké thymeleaf-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragment/header.html::header">
+</head>
+<body>
+<div th:replace="fragment/header.html::nav"></div>
+<form action="#" th:action="@{/user/connection}" enctype="multipart/form-data" method="post">
+    <p>login : <input type="text" th:name="login"/></p>
+    <p>password : <input type="password" th:name="pass"/></p>
+    <input type="submit" value="Valider" />
+</form>
+<div th:replace="fragment/footer.html::footer"></div>
+</body>
+
+</html>

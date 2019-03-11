@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="fr">
+    <head>
+        <title>Spring Security Example</title>
+    </head>
+    <body>
+        <h1>Liste des users!</h1>
+
+        <div th:each="list : ${listUsers}">
+        <p th:text="${list.getName()}"></p>
+        </div>
+
+         <!--<p sec:authorize="hasAnyAuthority('ROLE_USER')">Pour tous les USER</p>-->
+          <!--<p sec:authorize="hasAuthority('ADMIN')">Pour les ADMIN</p>-->
+             <!--<p sec:authorize="isAuthenticated()">Pour tous les utilisateurs </p>-->
+
+    </body>
+</html>

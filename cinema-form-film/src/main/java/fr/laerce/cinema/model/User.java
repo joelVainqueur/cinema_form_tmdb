@@ -1,6 +1,9 @@
 package fr.laerce.cinema.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
+import java.util.Objects;
 import java.util.Set;
 @Entity(name = "User")
 @Table(name="user", schema = "public")
@@ -10,8 +13,8 @@ public class User {
     @Column(name = "id", nullable = false)
     private long id;
     @Basic
-    @Column(name = "surname", nullable = true, length = 40)
-    private String surname;
+    @Column(name = "name", nullable = false, length = 100)
+    private String name;
     @Basic
     @Column(name = "givenname", nullable = true, length = 30)
     private String givenname;
@@ -21,8 +24,23 @@ public class User {
     @Basic
     @Column(name = "password", nullable = false, length = 120)
     private String password;
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Set<Review> reviews;
+    @Basic
+    @Column(name = "mail", nullable = false, length = 100)
+    private String mail;
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JsonIgnore
+    @JoinTable(name="user_group",
+            joinColumns =@JoinColumn(name = "id_user", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "id_group", referencedColumnName = "id"))
+    private Set<Groups>groups;
+
+    public void setGroups(Set<Groups> groups) {
+        this.groups = groups;
+    }
+
+    public Set<Groups> getGroups() {
+        return groups;
+    }
 
     public long getId() {
         return id;
@@ -32,14 +50,13 @@ public class User {
         this.id = id;
     }
 
-    public String getSurname() {
-        return surname;
+    public String getName() {
+        return name;
     }
 
-    public void setSurname(String surname) {
-        this.surname = surname;
+    public void setName(String name) {
+        this.name = name;
     }
-
 
     public String getGivenname() {
         return givenname;
@@ -49,14 +66,13 @@ public class User {
         this.givenname = givenname;
     }
 
-   public String getLogin() {
+    public String getLogin() {
         return login;
     }
 
     public void setLogin(String login) {
         this.login = login;
     }
-
 
     public String getPassword() {
         return password;
@@ -66,37 +82,41 @@ public class User {
         this.password = password;
     }
 
-    public Set<Review> getReviews() {
-        return reviews;
+    public String getMail() {
+        return mail;
     }
 
-    public void setReviews(Set<Review> reviews) {
-        this.reviews = reviews;
+    public void setMail(String mail) {
+        this.mail = mail;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
+        if (!(o instanceof User)) return false;
         User user = (User) o;
-
-        if (id != user.id) return false;
-        if (surname != null ? !surname.equals(user.surname) : user.surname != null) return false;
-        if (givenname != null ? !givenname.equals(user.givenname) : user.givenname != null) return false;
-        if (login != null ? !login.equals(user.login) : user.login != null) return false;
-        if (password != null ? !password.equals(user.password) : user.password != null) return false;
-
-        return true;
+        return getId() == user.getId() &&
+                Objects.equals(getName(), user.getName()) &&
+                Objects.equals(getGivenname(), user.getGivenname()) &&
+                Objects.equals(getLogin(), user.getLogin()) &&
+                Objects.equals(getPassword(), user.getPassword()) &&
+                Objects.equals(getMail(), user.getMail());
     }
 
     @Override
     public int hashCode() {
-        int result = (int) (id ^ (id >>> 32));
-        result = 31 * result + (surname != null ? surname.hashCode() : 0);
-        result = 31 * result + (givenname != null ? givenname.hashCode() : 0);
-        result = 31 * result + (login != null ? login.hashCode() : 0);
-        result = 31 * result + (password != null ? password.hashCode() : 0);
-        return result;
+        return Objects.hash(getId(), getName(), getGivenname(), getLogin(), getPassword(), getMail());
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", givenname='" + givenname + '\'' +
+                ", login='" + login + '\'' +
+                ", password='" + password + '\'' +
+                ", mail='" + mail + '\'' +
+                '}';
     }
 }

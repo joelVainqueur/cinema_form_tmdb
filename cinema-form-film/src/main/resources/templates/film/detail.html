@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title th:text="${film.title}">Un film</title>
-    <div th:replace="fragments/layout :: header-css">
+    <div th:replace="fragment/layout :: header-css">
 
     </div>
 </head>
 <body>
 
-<div th:include="fragments/layout :: header-page">
+<div th:include="fragment/layout :: header-page">
 </div>
 <style>
     #image0 {
@@ -185,7 +185,7 @@
             <p th:text="${#temporals.format(film.getReleaseDate(), 'yyyy')}"></p>
 
         </div>
-        <div th:include="fragments/layout :: footer-js"></div>
+        <div th:include="fragment/layout :: footer-js"></div>
         <script type="application/javascript">
             $('#menu-films').addClass("active");
         </script>

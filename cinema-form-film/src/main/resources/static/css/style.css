@@ -1,6 +1,158 @@
 body {
-    /*background: #111 no-repeat;*/
+    background: #111 no-repeat;
     background-image: -webkit-gradient(radial, 50% 0, 150, 50% 0, 300, from(#444), to(#111));
+}
+
+header {
+    width: 100%;
+    height: 150px;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    background-color: #0683c9;
+    -webkit-transition: height 0.3s;
+    -moz-transition: height 0.3s;
+    -ms-transition: height 0.3s;
+    -o-transition: height 0.3s;
+    transition: height 0.3s;
+}
+
+header h1#logo {
+    display: inline-block;
+    height: 150px;
+    line-height: 150px;
+    float: left;
+    font-family: "Oswald", sans-serif;
+    font-size: 60px;
+    color: white;
+    font-weight: 400;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+header nav {
+    display: inline-block;
+    /*float: right;*/
+}
+
+header nav a {
+    line-height: 150px;
+    margin-left: 20px;
+    color: #9fdbfc;
+    font-weight: 700;
+    font-size: 18px;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+header nav a:hover {
+    color: white;
+}
+
+header.smaller {
+    height: 75px;
+}
+
+header.smaller h1#logo {
+    width: 150px;
+    height: 75px;
+    line-height: 75px;
+    font-size: 30px;
+}
+
+header.smaller nav a {
+    line-height: 75px;
+}
+
+/* =Footer
+-------------------------------------------------------------- */
+/* =Extras
+-------------------------------------------------------------- */
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    content: "";
+    clear: both;
+    height: 0;
+}
+
+/* =Media Queries
+-------------------------------------------------------------- */
+@media all and (max-width: 660px) {
+    /* =Header
+    -------------------------------------------------------------- */
+    header h1#logo {
+        display: block;
+        float: none;
+        margin: 0 auto;
+        height: 100px;
+        line-height: 100px;
+        text-align: center;
+    }
+
+    header nav {
+        display: block;
+        float: none;
+        height: 50px;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    header nav a {
+        line-height: 50px;
+        margin: 0 10px;
+    }
+
+    header.smaller {
+        height: 75px;
+    }
+
+    header.smaller h1#logo {
+        height: 40px;
+        line-height: 40px;
+        font-size: 30px;
+    }
+
+    header.smaller nav {
+        height: 35px;
+    }
+
+    header.smaller nav a {
+        line-height: 35px;
+    }
+}
+
+@media all and (max-width: 600px) {
+    .container {
+        width: 100%;
+    }
+
+    #info-bar a {
+        display: block;
+    }
+
+    #info-bar span.all-tutorials,
+    #info-bar span.back-to-tutorial {
+        width: 100%;
+    }
+
+    #info-bar span.all-tutorials,
+    #info-bar span.back-to-tutorial {
+        float: none;
+        text-align: center;
+    }
+
+    #info-bar span.all-tutorials {
+        border-bottom: solid 1px #0793e2;
+    }
 }
 
 h1 {
@@ -54,6 +206,7 @@ h3 a:hover {
     border: dashed 2px #CCC;
     padding: 10px;
     padding-left: 20px;
+    margin-top: 11%;
 }
 
 #apiDiv input, #apiDiv button {
@@ -135,18 +288,19 @@ h3 a:hover {
     background: #FFF;
 }
 
-
 /*monMondal*/
 .modal-confirm {
     color: #434e65;
     width: 525px;
 }
+
 .modal-confirm .modal-content {
     padding: 20px;
     font-size: 16px;
     border-radius: 5px;
     border: none;
 }
+
 .modal-confirm .modal-header {
     background: #47c9a2;
     border-bottom: none;
@@ -156,15 +310,18 @@ h3 a:hover {
     border-radius: 5px 5px 0 0;
     padding: 35px;
 }
+
 .modal-confirm h4 {
     text-align: center;
     font-size: 36px;
     margin: 10px 0;
 }
+
 .modal-confirm .form-control, .modal-confirm .btn {
     min-height: 40px;
     border-radius: 3px;
 }
+
 .modal-confirm .close {
     position: absolute;
     top: 15px;
@@ -173,9 +330,11 @@ h3 a:hover {
     text-shadow: none;
     opacity: 0.5;
 }
+
 .modal-confirm .close:hover {
     opacity: 0.8;
 }
+
 .modal-confirm .icon-box {
     color: #fff;
     width: 95px;
@@ -187,13 +346,16 @@ h3 a:hover {
     padding: 15px;
     text-align: center;
 }
+
 .modal-confirm .icon-box i {
     font-size: 64px;
     margin: -4px 0 0 -4px;
 }
+
 .modal-confirm.modal-dialog {
     margin-top: 80px;
 }
+
 .modal-confirm .btn {
     color: #fff;
     border-radius: 4px;
@@ -206,19 +368,23 @@ h3 a:hover {
     padding: 6px 20px;
     border: none;
 }
+
 .modal-confirm .btn:hover, .modal-confirm .btn:focus {
     background: #eda645;
     outline: none;
 }
+
 .modal-confirm .btn span {
     margin: 1px 3px 0;
     float: left;
 }
+
 .modal-confirm .btn i {
     margin-left: 1px;
     font-size: 20px;
     float: right;
 }
+
 .trigger-btn {
     display: inline-block;
     margin: 100px auto;
