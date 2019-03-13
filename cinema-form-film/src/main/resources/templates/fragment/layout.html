@@ -3,7 +3,7 @@
       xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Layout Title</title>
-    <div th:fragment="header-css" th:remove="tag">
+     <div th:fragment="header-css" th:remove="tag">
         <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
         <!--<meta charset="UTF-8">-->
         <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
@@ -26,36 +26,37 @@
 </head>
 
 <div th:fragment="header-page">
-    <header>
-        <div class="container clearfix">
-            <h1 id="logo">
-                Cinéma
-            </h1>
-            <nav>
-                <a href="">Lorem</a>
-                <a href="">Ipsum</a>
-                <a href="">Dolor</a>
+    <!--<header>-->
+        <!--<div id="menu">-->
+            <!--<h1 id="logo">-->
+                <!--Cinéma-->
+            <!--</h1>-->
+            <!--<ul class="small right">-->
+                <!--<li>-->
+                    <!--<a href="#">totolande</a>-->
+                <!--</li>-->
+                <!--<li>-->
+                    <!--<a href="#">wilfriedland</a>-->
+                <!--</li>-->
+                <!--<li>-->
+                    <!--<a href="#">Geraldineland</a>-->
+                <!--</li>-->
+            <!--</ul>-->
+            <!--&lt;!&ndash;<nav>&ndash;&gt;-->
+                <!--&lt;!&ndash;<a href="">Totoland</a>&ndash;&gt;-->
+                <!--&lt;!&ndash;<a href="">Joelland</a>&ndash;&gt;-->
+                <!--&lt;!&ndash;<a href="">Raphaelland</a>&ndash;&gt;-->
+                <!--&lt;!&ndash;<a href="">Wilfriedland</a>&ndash;&gt;-->
+                <!--&lt;!&ndash;<a href="">Cyrilland</a>&ndash;&gt;-->
+                <!--&lt;!&ndash;<a id="salut" style="color: blue" th:inline="text">salut [[${#httpServletRequest.remoteUser}]]!</a>&ndash;&gt;-->
+            <!--&lt;!&ndash;</nav>&ndash;&gt;-->
 
-                <!--<boutton>-->
-                    <!--<form style="color: red" th:action="@{/logout}" method="post">-->
-                        <!--<input type="submit" value="Sign Out"/>-->
-                    <!--</form>-->
-                <!--</boutton>-->
-            </nav>
-            <h1 style="color: red" th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
-        </div>
-    </header>
+        <!--</div>-->
+    <!--</header>-->
 
 
 </div>
 
-
-</div>
-<div clas="ui container">
-    <h1>A l'affiche en ce moment</h1>
-    <h2 class="ui dividing header">Date</h2>
-
-</div>
 
 
 <div th:fragment="footer-js">

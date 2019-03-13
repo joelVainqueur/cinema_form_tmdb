@@ -3,21 +3,6 @@ body {
     background-image: -webkit-gradient(radial, 50% 0, 150, 50% 0, 300, from(#444), to(#111));
 }
 
-header {
-    width: 100%;
-    height: 150px;
-    overflow: hidden;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 999;
-    background-color: #0683c9;
-    -webkit-transition: height 0.3s;
-    -moz-transition: height 0.3s;
-    -ms-transition: height 0.3s;
-    -o-transition: height 0.3s;
-    transition: height 0.3s;
-}
 
 header h1#logo {
     display: inline-block;
@@ -37,8 +22,9 @@ header h1#logo {
 
 header nav {
     display: inline-block;
-    /*float: right;*/
+    float: right;
 }
+
 
 header nav a {
     line-height: 150px;
@@ -369,23 +355,57 @@ h3 a:hover {
     border: none;
 }
 
-.modal-confirm .btn:hover, .modal-confirm .btn:focus {
-    background: #eda645;
-    outline: none;
+/*.modal-confirm .btn:hover, .modal-confirm .btn:focus {*/
+    /*background: #eda645;*/
+    /*outline: none;*/
+/*}*/
+
+/*.modal-confirm .btn span {*/
+    /*margin: 1px 3px 0;*/
+    /*float: left;*/
+/*}*/
+
+/*.modal-confirm .btn i {*/
+    /*margin-left: 1px;*/
+    /*font-size: 20px;*/
+    /*float: right;*/
+/*}*/
+
+/*.trigger-btn {*/
+    /*display: inline-block;*/
+    /*margin: 100px auto;*/
+/*}*/
+
+/*.navbar {*/
+    /*position: relative;*/
+    /*display: flex;*/
+    /*flex-wrap: wrap;*/
+    /*align-items: center;*/
+    /*justify-content: space-between;*/
+    /*padding: 0.5rem 1rem;*/
+    /*background:#222;*/
+    /*color: #f2f2f2;*/
+/*}*/
+
+header ul.small {
+    display: inline-flex;
+    height: auto;
+    position: absolute;
+    font-size: 0.75em;
+}
+header ul {
+     display: flex;
+     align-items: center;
+     font-size: 1em;
+     height: 72px;
+     box-sizing: border-box;
+}
+ul {
+    list-style-type: none;
+    line-height: 1.4em;
+}
+body, ul {
+     margin: 0;
+     padding: 0;
 }
 
-.modal-confirm .btn span {
-    margin: 1px 3px 0;
-    float: left;
-}
-
-.modal-confirm .btn i {
-    margin-left: 1px;
-    font-size: 20px;
-    float: right;
-}
-
-.trigger-btn {
-    display: inline-block;
-    margin: 100px auto;
-}

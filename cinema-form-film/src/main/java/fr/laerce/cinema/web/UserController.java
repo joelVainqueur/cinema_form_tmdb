@@ -37,9 +37,24 @@ public class UserController {
         model.addAttribute ("user", new User ());
         return "user/form";
     }
+    @GetMapping("/register")
+    public String register(Model model){
+        model.addAttribute ("user", new User ());
+        return "register";
+    }
+    @GetMapping("/login")
+    public String login(Model model){
+        model.addAttribute ("user", new User ());
+        return "login";
+    }
     @PostMapping("/form")
     public String form (@ModelAttribute User newuser) {
         userDao.save(newuser);
         return "redirect:/";
+    }
+    @GetMapping("/oublie")
+    public String oublie(Model model){
+        model.addAttribute ("user", new User ());
+        return "forgot-password";
     }
 }

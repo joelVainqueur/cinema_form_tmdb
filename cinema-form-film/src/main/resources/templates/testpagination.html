@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity">
+    <head>
+        <title>Spring Security Example </title>
+    </head>
+    <body>
+    <!doctype html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Title</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+              integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+              crossorigin="anonymous">
+    </head>
+    <body>
+<table class="table table-hover">
+    <thead>
+    <tr>
+        <th scope="col">#ID</th>
+        <th scope="col">NAME</th>
+        <th scope="col">BRANCH</th>
+        <th scope="col">PERCENTAGE</th>
+        <th scope="col">PHONE</th>
+        <th scope="col">EMAIL</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="tables: ${table}">
+        <th scope="row" th:text="${tables.id}"></th>
+        <td th:text="${tables.name}"></td>
+        <td th:text="${tables.branch}"></td>
+        <td th:text="${tables.percentage}"></td>
+        <td th:text="${tables.phone}"></td>
+        <td th:text="${tables.email}"></td>
+    </tr><hr/>
+    <!--<ul class="nav nav-pills">-->
+        <!--<li class="nav-item " th:each="i:  ${#numbers.sequence(0,table.totalPages)}">-->
+            <!--<a th:text="${i}" class="nav-link"></a>-->
+        <!--</li>-->
+    <!--</ul>-->
+
+
+</table>
+<script src="js/pagin.js"th:src="@{/js/pagin.js}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+            integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+            crossorigin="anonymous"></script>
+    </body>
+    </html>
+    </body>
+</html>
+
+

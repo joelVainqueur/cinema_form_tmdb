@@ -47,6 +47,12 @@ public class FilmController {
         model.addAttribute("films", films);
         return "film/list";
     }
+    @GetMapping("/importation")
+    public String importation() {
+
+        return "importation";
+    }
+
 //    @GetMapping("/tmdb/{idtmdb}")
 //    public String tmdbfilm(@PathVariable("idtmdb")BigInteger idtmdb, RedirectAttributes redirectAttrs) throws Exception {
 //    tmdbClient.getMovieByTmdbId(idtmdb);

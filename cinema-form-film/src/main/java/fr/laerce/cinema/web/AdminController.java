@@ -3,9 +3,10 @@ package fr.laerce.cinema.web;
 import fr.laerce.cinema.dao.TmdbFilmDao;
 import fr.laerce.cinema.service.ImportFilmsFromTMDB;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-
+@Controller
 public class AdminController {
     @Autowired
     private TmdbFilmDao tmdbFilmDao;
