@@ -1,98 +1,242 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="fr" xmlns:th="http://www.thymeleaf.org" xmlns:v-bind="http://www.w3.org/1999/xhtml">-->
+
+<!--<head>-->
+
+  <!--<meta charset="utf-8">-->
+  <!--<meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">-->
+  <!--<meta name="description" content="">-->
+  <!--<meta name="author" content="">-->
+
+  <!--<title>SB Admin - Register</title>-->
+
+  <!--<link rel="stylesheet" href="/vendor/datatables/dataTables.bootstrap4.css"-->
+        <!--th:href="@{/vendor/datatables/css/dataTables.bootstrap4.css}"/>-->
+  <!--&lt;!&ndash; Custom fonts for this template&ndash;&gt;-->
+  <!--&lt;!&ndash;<link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">&ndash;&gt;-->
+
+  <!--<link rel="stylesheet" href="/vendor/fontawesome-free/css/all.min.css"-->
+        <!--th:href="@{/vendor/fontawesome-free/css/all.min.css}"/>-->
+
+  <!--&lt;!&ndash; Custom styles for this template&ndash;&gt;-->
+  <!--&lt;!&ndash;<link href="css/sb-admin.css" rel="stylesheet">&ndash;&gt;-->
+  <!--<link rel="stylesheet" href="/css/sb-admin.css"-->
+        <!--th:href="@{/css/sb-admin.css}"/>-->
+
+<!--</head>-->
+
+<!--<body class="bg-dark">-->
+
+  <!--<div class="container">-->
+    <!--<div class="card card-register mx-auto mt-5">-->
+      <!--<div class="card-header">Register an Account</div>-->
+      <!--<div class="card-body">-->
+        <!--<form action="#" th:action="@{/user/register}" th:object="${user}" method="post" role="form" data-toggle="validator">-->
+
+          <!--&lt;!&ndash;les messages&ndash;&gt;-->
+          <!--<div th:if="${confirmationMessage}" class="alert alert-success"-->
+               <!--role="alert" th:text="${confirmationMessage}">-->
+          <!--</div>-->
+
+          <!--<div th:if="${errorMessage}"-->
+               <!--class="alert alert-danger" role="alert"-->
+               <!--th:text="${errorMessage}">-->
+          <!--</div>-->
+
+
+          <!--<div th:if="${#fields.hasErrors('name')}"-->
+               <!--th:errors="*{name}"-->
+               <!--class="validation-message alert alert-danger" role="alert">-->
+
+          <!--</div>-->
+
+          <!--<div th:if="${#fields.hasErrors('givenname')}"-->
+               <!--th:errors="*{givenname}"-->
+               <!--class="validation-message alert alert-danger" role="alert">-->
+          <!--</div>-->
+
+          <!--<div th:if="${#fields.hasErrors('mail')}" th:errors="*{mail}"-->
+               <!--class="validation-message alert alert-danger" role="alert">-->
+          <!--</div>-->
+
+          <!--<div class="form-group">-->
+            <!--<div class="form-row">-->
+              <!--<div class="col-md-6">-->
+                <!--<div class="form-label-group">-->
+                  <!--<input type="text" th:field="*{name}" id="name" class="form-control" placeholder="First name" required="required" autofocus="autofocus">-->
+                  <!--<label th:if="${#fields.hasErrors('name')}"-->
+                         <!--th:errors="*{name}" class="validation-message"></label>-->
+                <!--</div>-->
+              <!--</div>-->
+              <!--<div class="col-md-6">-->
+                <!--<div class="form-label-group">-->
+                  <!--<input type="text" th:field="*{givenname}" id="givename" class="form-control" placeholder="Last name" required="required">-->
+                  <!--<label th:if="${#fields.hasErrors('givenname')}"-->
+                         <!--th:errors="*{givenname}" class="validation-message"></label>-->
+                <!--</div>-->
+              <!--</div>-->
+            <!--</div>-->
+          <!--</div>-->
+          <!--<div class="form-group">-->
+            <!--<div class="form-label-group">-->
+              <!--<input type="mail" id="mail" class="form-control" placeholder="Email address"  required="required">-->
+              <!--<label th:if="${#fields.hasErrors('mail')}"-->
+                     <!--th:errors="*{mail}" class="validation-message"></label>-->
+            <!--</div>-->
+          <!--</div>-->
+
+          <!--&lt;!&ndash;<div class="form-group">&ndash;&gt;-->
+            <!--&lt;!&ndash;<div class="form-row">&ndash;&gt;-->
+              <!--&lt;!&ndash;<div class="col-md-6">&ndash;&gt;-->
+                <!--&lt;!&ndash;<div class="form-label-group">&ndash;&gt;-->
+                  <!--&lt;!&ndash;<input type="password" id="inputPassword" class="form-control" placeholder="Password" required="required">&ndash;&gt;-->
+                  <!--&lt;!&ndash;<label for="inputPassword">Password</label>&ndash;&gt;-->
+                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+              <!--&lt;!&ndash;</div>&ndash;&gt;-->
+              <!--&lt;!&ndash;<div class="col-md-6">&ndash;&gt;-->
+                <!--&lt;!&ndash;<div class="form-label-group">&ndash;&gt;-->
+                  <!--&lt;!&ndash;<input type="password" id="confirmPassword" class="form-control" placeholder="Confirm password" required="required">&ndash;&gt;-->
+                  <!--&lt;!&ndash;<label for="confirmPassword">Confirm password</label>&ndash;&gt;-->
+                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+              <!--&lt;!&ndash;</div>&ndash;&gt;-->
+            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+          <!--&lt;!&ndash;</div>&ndash;&gt;-->
+          <!--<button type="submit" class="btn btn-primary btn-block" href="login">Register</button>-->
+        <!--</form>-->
+        <!--<div class="text-center">-->
+          <!--<a class="d-block small mt-3" href="#" th:href="@{/user/login}">Login Page</a>-->
+          <!--<a class="d-block small" href="#" th:href="@{/user/oublie}">Forgot Password?</a>-->
+          <!--<a class="dropdown-item" href="#" th:href="@{/user/oublie}">Mot de passe oublié?</a>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+
+  <!--&lt;!&ndash; Bootstrap core JavaScript&ndash;&gt;-->
+  <!--&lt;!&ndash;<script src="vendor/jquery/jquery.min.js"></script>&ndash;&gt;-->
+  <!--<script src="/vendor/jquery/jquery.min.js" th:src="@{/vendor/jquery/jquery.min.js}"></script>-->
+  <!--&lt;!&ndash;<script src="vendor/jquery/jquery.min.js"></script>&ndash;&gt;-->
+  <!--<script src="vendor/bootstrap/js/bootstrap.bundle.min.js" th:src="@{/vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>-->
+  <!--&lt;!&ndash;<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>&ndash;&gt;-->
+
+  <!--<script src="vendor/jquery-easing/jquery.easing.min.js" th:src="@{/vendor/jquery-easing/jquery.easing.min.js}"></script>-->
+
+  <!--&lt;!&ndash; Core plugin JavaScript&ndash;&gt;-->
+  <!--&lt;!&ndash;<script src="vendor/jquery-easing/jquery.easing.min.js"></script>&ndash;&gt;-->
+
+<!--</body>-->
+
+<!--</html>-->
+
+
 <!DOCTYPE html>
-<html lang="fr" xmlns:th="http://www.thymeleaf.org" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 
 <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="User account registration" />
+  <meta name="author" content="Amir Boroumand" />
+  <link rel="icon" href="favicon.ico" />
 
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
+  <title>Registration Page</title>
 
-  <title>SB Admin - Register</title>
+  <!-- Bootstrap core CSS -->
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous" />
 
-  <link rel="stylesheet" href="/vendor/datatables/dataTables.bootstrap4.css"
-        th:href="@{/vendor/datatables/css/dataTables.bootstrap4.css}"/>
-  <!-- Custom fonts for this template-->
-  <!--<link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">-->
-
-  <link rel="stylesheet" href="/vendor/fontawesome-free/css/all.min.css"
-        th:href="@{/vendor/fontawesome-free/css/all.min.css}"/>
-
-  <!-- Custom styles for this template-->
-  <!--<link href="css/sb-admin.css" rel="stylesheet">-->
-  <link rel="stylesheet" href="/css/sb-admin.css"
-        th:href="@{/css/sb-admin.css}"/>
-
+  <!--<link th:href="@{css/style.css}" rel="stylesheet" />-->
 </head>
 
-<body class="bg-dark">
+<body class="gray-bg">
 
-  <div class="container">
-    <div class="card card-register mx-auto mt-5">
-      <div class="card-header">Register an Account</div>
-      <div class="card-body">
-        <form>
-          <div class="form-group">
-            <div class="form-row">
-              <div class="col-md-6">
-                <div class="form-label-group">
-                  <input type="text" id="firstName" class="form-control" placeholder="First name" required="required" autofocus="autofocus">
-                  <label for="firstName">First name</label>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-label-group">
-                  <input type="text" id="lastName" class="form-control" placeholder="Last name" required="required">
-                  <label for="lastName">Last name</label>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="form-group">
-            <div class="form-label-group">
-              <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="required">
-              <label for="inputEmail">Email address</label>
-            </div>
-          </div>
-          <div class="form-group">
-            <div class="form-row">
-              <div class="col-md-6">
-                <div class="form-label-group">
-                  <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="required">
-                  <label for="inputPassword">Password</label>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-label-group">
-                  <input type="password" id="confirmPassword" class="form-control" placeholder="Confirm password" required="required">
-                  <label for="confirmPassword">Confirm password</label>
-                </div>
-              </div>
-            </div>
-          </div>
-          <a class="btn btn-primary btn-block" href="login.html">Register</a>
-        </form>
-        <div class="text-center">
-          <a class="d-block small mt-3" href="#" th:href="@{/user/login}">Login Page</a>
-          <a class="d-block small" href="#" th:href="@{/user/oublie}">Forgot Password?</a>
-          <a class="dropdown-item" href="#" th:href="@{/user/oublie}">Mot de passe oublié?</a>
-        </div>
+<div class="middle-box text-center loginscreen animated fadeInDown">
+  <div>
+
+    <h4>New User Registration</h4>
+
+    <form autocomplete="off" action="#" th:action="@{register}"
+          th:object="${user}" method="post" class="m-t" role="form"
+          data-toggle="validator">
+
+      <div th:if="${confirmationMessage}" class="alert alert-success"
+           role="alert" th:text=${confirmationMessage}></div>
+
+      <div th:if="${errorMessage}"
+           class="alert alert-danger" role="alert"
+           th:text="${errorMessage}"></div>
+
+
+      <div th:if="${#fields.hasErrors('name')}"
+           th:errors="*{name}"
+           class="validation-message alert alert-danger" role="alert"></div>
+
+      <div th:if="${#fields.hasErrors('name')}"
+           th:errors="*{name}"
+           class="validation-message alert alert-danger" role="alert"></div>
+
+      <div th:if="${#fields.hasErrors('mail')}" th:errors="*{mail}"
+           class="validation-message alert alert-danger" role="alert"></div>
+
+      <div class="form-group input-group has-feedback">
+        <label th:if="${#fields.hasErrors('givenname')}"
+               th:errors="*{givenname}" class="validation-message"></label>
+        <span class="input-group-addon">
+            <span class="glyphicon glyphicon-user"></span>
+          </span>
+
+        <input type="text" th:field="*{givenname}"
+               placeholder="Prénom" class="form-control" required />
+        <span class="glyphicon form-control-feedback"
+              aria-hidden="true"></span>
       </div>
-    </div>
+
+      <div class="form-group input-group has-feedback">
+          <span class="input-group-addon">
+            <span class="glyphicon glyphicon-user"></span>
+          </span>
+        <input type="text" th:field="*{name}"
+               placeholder="nom" class="form-control" required />
+        <span class="glyphicon form-control-feedback"
+              aria-hidden="true"></span>
+      </div>
+
+      <div class="form-group input-group has-feedback">
+          <span class="input-group-addon">
+            <span class="glyphicon glyphicon-envelope"></span>
+          </span>
+        <input type="email" th:field="*{mail}"
+               placeholder="Email Address" class="form-control"
+               data-error="This email address is invalid" required />
+        <span class="glyphicon form-control-feedback"
+              aria-hidden="true"></span>
+
+      </div>
+
+      <button type="submit" class="btn btn-primary block full-width m-b">Register</button>
+      <a class="d-block small mt-3" href="#" th:href="@{login}">Login Page</a>
+    </form>
+
   </div>
+</div>
 
-  <!-- Bootstrap core JavaScript-->
-  <!--<script src="vendor/jquery/jquery.min.js"></script>-->
-  <script src="/vendor/jquery/jquery.min.js" th:src="@{/vendor/jquery/jquery.min.js}"></script>
-  <!--<script src="vendor/jquery/jquery.min.js"></script>-->
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js" th:src="@{/vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
-  <!--<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>-->
+<!-- jQuery-->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
-  <script src="vendor/jquery-easing/jquery.easing.min.js" th:src="@{/vendor/jquery-easing/jquery.easing.min.js}"></script>
+<!-- Bootstrap -->
+<script
+        src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
 
-  <!-- Core plugin JavaScript-->
-  <!--<script src="vendor/jquery-easing/jquery.easing.min.js"></script>-->
+<!-- Bootstrap Validator plugin -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js"></script>
+
 
 </body>
 
